@@ -1,26 +1,21 @@
 alert("bienvenido a mi programa para conversion de valores");
 alert("puedes convertir pesos dolares euros reales mexicanos yuanes");
 let tipoDeMoneda= prompt("ingrese que moneda posee");
-while ((tipoDeMoneda!="pesos") || (tipoDeMoneda!="dolares")||(tipoDeMoneda!="euros")||(tipoDeMoneda!="reales")||(tipoDeMoneda!="mexicanos")||(tipoDeMoneda!="yuanes"))
+while ((tipoDeMoneda!="pesos") && (tipoDeMoneda!="dolares")&&(tipoDeMoneda!="euros")&&(tipoDeMoneda!="reales")&&(tipoDeMoneda!="mexicanos")&&(tipoDeMoneda!="yuanes"))
 {
     tipoDeMoneda=prompt("Ingresa un valor valido pa");
 }
-let conversion=prompt("¿a que moneda le gustaria convertirlo");
-while ((conversion!="pesos") || (conversion!="dolares")||(conversion!="euros")||(conversion!="reales")||(conversion!="mexicanos")||(conversion!="yuanes"))
+let conversion=prompt("¿a que moneda le gustaria convertirlo?");
+while ((conversion!="pesos") && (conversion!="dolares")&&(conversion!="euros")&&(conversion!="reales")&&(conversion!="mexicanos")&&(conversion!="yuanes"))
 {
     conversion=prompt("Ingresa un valor valido pa");
 }
-if (tipoDeMoneda==conversion)
-{
-    alert("esta aplicacion no esta hecha para gente que no puede entender una consigna tan simple");
-    alert("no se puede convertir una moneda en su propia moneda");
-}
-let cantidad=parseInt(prompt(`¿cuantos ${tipoDemoneda} le gustaria convertir?`));
+let cantidad=parseInt(prompt("¿cuanto le gustaria convertir?"));
 let totalConversion;
 
-switch(tipoDeMoneda)
+function trabajo()
 {
-    case 'pesos':
+    if (tipoDeMoneda=="pesos")
     {           
         if (conversion=="dolares")
         {
@@ -43,7 +38,7 @@ switch(tipoDeMoneda)
             totalConversion=(cantidad*0.037);
         }
     }
-    case 'dolares':
+    else if (tipoDeMoneda=="dolares")
     {
         if (conversion=="peso")
         {
@@ -66,7 +61,7 @@ switch(tipoDeMoneda)
             totalConversion=(cantidad*6.78);
         }
     }
-    case 'euros':
+    else if (tipoDeMoneda=="euros")
     {
         if (conversion=="peso")
         {
@@ -89,7 +84,7 @@ switch(tipoDeMoneda)
             totalConversion=(cantidad*7.38);
         }
     }
-    case 'reales':
+    else if(tipoDeMoneda=="reales")
     {
         if (conversion=="peso")
         {
@@ -112,7 +107,7 @@ switch(tipoDeMoneda)
             totalConversion=(cantidad*1.33);
         }
     }
-    case 'mexicanos':
+    else if (tipoDeMoneda=="mexicanos")
     {
         if (conversion=="peso")
         {
@@ -135,7 +130,7 @@ switch(tipoDeMoneda)
             totalConversion=(cantidad*0.36);
         }
     }
-    case 'yuanes':
+    else
     {
         if (conversion=="peso")
         {
@@ -157,7 +152,8 @@ switch(tipoDeMoneda)
         {
             totalConversion=(cantidad*0.75);
         }
-    }
-        
-    alert(`El total es ${totalConversion} ${conversion}`);
+    }   
 }
+trabajo();
+console.log(`El total es ${totalConversion} ${conversion}`);       
+alert(`El total es ${totalConversion} ${conversion}`);
