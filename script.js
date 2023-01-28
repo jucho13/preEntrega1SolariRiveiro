@@ -20,73 +20,144 @@ let totalConversion;
 
 switch(tipoDeMoneda)
 {
-    case 'pesos'=
+    case 'pesos':
     {           
         if (conversion=="dolares")
         {
-            totalConversion=(cantidad*0,0054);
+            totalConversion=(cantidad*0.0054);
         }
         else if (conversion=="euros") 
         {
-            totalConversion=(cantidad*0,0050);
+            totalConversion=(cantidad*0.0050);
         }
         else if (conversion=="reales")
         {
-            totalConversion=(cantidad*0,027);
+            totalConversion=(cantidad*0.027);
         }
         else if (conversion=="mexicanos")
         {
-            totalConversion=(cantidad*0,10);
+            totalConversion=(cantidad*0.10);
         }
         else if (conversion=="yuanes")
         {
-            totalConversion=(cantidad*0,037);
+            totalConversion=(cantidad*0.037);
         }
     }
-    case 'dolares'=
+    case 'dolares':
     {
         if (conversion=="peso")
         {
-            totalConversion=(cantidad*185,62);
+            totalConversion=(cantidad*185.62);
         }
         else if (conversion=="euros") 
         {
-            totalConversion=(cantidad*0,92);
+            totalConversion=(cantidad*0.92);
         }
         else if (conversion=="reales")
         {
-            totalConversion=(cantidad*5,11);
+            totalConversion=(cantidad*5.11);
         }
         else if (conversion=="mexicanos")
         {
-            totalConversion=(cantidad*18,78);
+            totalConversion=(cantidad*18.78);
         }
         else if (conversion=="yuanes")
         {
-            totalConversion=(cantidad*6,78);
+            totalConversion=(cantidad*6.78);
         }
     }
-    case 'euros'=
+    case 'euros':
     {
         if (conversion=="peso")
         {
-            totalConversion=(cantidad*201,68);
+            totalConversion=(cantidad*201.68);
         }
         else if (conversion=="dolares") 
         {
-            totalConversion=(cantidad*0,92);
+            totalConversion=(cantidad*1.09);
         }
         else if (conversion=="reales")
         {
-            totalConversion=(cantidad*5,11);
+            totalConversion=(cantidad*5.56);
         }
         else if (conversion=="mexicanos")
         {
-            totalConversion=(cantidad*18,78);
+            totalConversion=(cantidad*20.40);
         }
         else if (conversion=="yuanes")
         {
-            totalConversion=(cantidad*6,78);
+            totalConversion=(cantidad*7.38);
         }
     }
+    case 'reales':
+    {
+        if (conversion=="peso")
+        {
+            totalConversion=(cantidad*36.33);
+        }
+        else if (conversion=="dolares") 
+        {
+            totalConversion=(cantidad*0.20);
+        }
+        else if (conversion=="euros")
+        {
+            totalConversion=(cantidad*0.18);
+        }
+        else if (conversion=="mexicanos")
+        {
+            totalConversion=(cantidad*3.68);
+        }
+        else if (conversion=="yuanes")
+        {
+            totalConversion=(cantidad*1.33);
+        }
+    }
+    case 'mexicanos':
+    {
+        if (conversion=="peso")
+        {
+            totalConversion=(cantidad*9.89);
+        }
+        else if (conversion=="dolares") 
+        {
+            totalConversion=(cantidad*0.053);
+        }
+        else if (conversion=="euros")
+        {
+            totalConversion=(cantidad*0.049);
+        }
+        else if (conversion=="reales")
+        {
+            totalConversion=(cantidad*0.27);
+        }
+        else if (conversion=="yuanes")
+        {
+            totalConversion=(cantidad*0.36);
+        }
+    }
+    case 'yuanes':
+    {
+        if (conversion=="peso")
+        {
+            totalConversion=(cantidad*27.35);
+        }
+        else if (conversion=="dolares") 
+        {
+            totalConversion=(cantidad*0.15);
+        }
+        else if (conversion=="euros")
+        {
+            totalConversion=(cantidad*0.14);
+        }
+        else if (conversion=="mexicanos")
+        {
+            totalConversion=(cantidad*2.77);
+        }
+        else if (conversion=="reales")
+        {
+            totalConversion=(cantidad*0.75);
+        }
+    }
+        
+    alert(`El total es ${totalConversion} ${conversion}`);
 }
