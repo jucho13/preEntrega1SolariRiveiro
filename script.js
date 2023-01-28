@@ -154,6 +154,5 @@ function trabajo()
         }
     }   
 }
-trabajo();
-console.log(`El total es ${totalConversion} ${conversion}`);       
+trabajo();    
 alert(`El total es ${totalConversion} ${conversion}`);
