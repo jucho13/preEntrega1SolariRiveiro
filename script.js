@@ -1,20 +1,31 @@
 alert("bienvenido a mi programa para conversion de valores");
 alert("puedes convertir pesos dolares euros reales mexicanos yuanes");
-let tipoDeMoneda= prompt("ingrese que moneda posee");
-while ((tipoDeMoneda!="pesos") && (tipoDeMoneda!="dolares")&&(tipoDeMoneda!="euros")&&(tipoDeMoneda!="reales")&&(tipoDeMoneda!="mexicanos")&&(tipoDeMoneda!="yuanes"))
+function eligeMoneda1()
 {
-    tipoDeMoneda=prompt("Ingresa un valor valido pa");
+    let tipoDeMoneda= prompt("ingrese que moneda posee");
+    while ((tipoDeMoneda!="pesos") && (tipoDeMoneda!="dolares")&&(tipoDeMoneda!="euros")&&(tipoDeMoneda!="reales")&&(tipoDeMoneda!="mexicanos")&&(tipoDeMoneda!="yuanes"))
+    {
+        tipoDeMoneda=prompt("Ingresa un valor valido pa");
+    }
+    return tipoDeMoneda;
 }
-let conversion=prompt("¿a que moneda le gustaria convertirlo?");
-while ((conversion!="pesos") && (conversion!="dolares")&&(conversion!="euros")&&(conversion!="reales")&&(conversion!="mexicanos")&&(conversion!="yuanes"))
+function eligeMoneda2()
 {
-    conversion=prompt("Ingresa un valor valido pa");
+    let conversion=prompt("¿a que moneda le gustaria convertirlo?");
+    while ((conversion!="pesos") && (conversion!="dolares")&&(conversion!="euros")&&(conversion!="reales")&&(conversion!="mexicanos")&&(conversion!="yuanes"))
+    {
+        conversion=prompt("Ingresa un valor valido pa");
+    }
+    return conversion;
 }
-let cantidad=parseInt(prompt("¿cuanto le gustaria convertir?"));
-let totalConversion;
-
-function trabajo()
+function cantidad()
 {
+    let cantidad=parseInt(prompt("¿cuanto le gustaria convertir?"));
+    return cantidad;
+}
+function trabajo(tipoDeMoneda,conversion,cantidad)
+{
+    let totalConversion;
     if (tipoDeMoneda=="pesos")
     {           
         if (conversion=="dolares")
@@ -40,7 +51,7 @@ function trabajo()
     }
     else if (tipoDeMoneda=="dolares")
     {
-        if (conversion=="peso")
+        if (conversion=="pesos")
         {
             totalConversion=(cantidad*185.62);
         }
@@ -63,7 +74,7 @@ function trabajo()
     }
     else if (tipoDeMoneda=="euros")
     {
-        if (conversion=="peso")
+        if (conversion=="pesos")
         {
             totalConversion=(cantidad*201.68);
         }
@@ -86,7 +97,7 @@ function trabajo()
     }
     else if(tipoDeMoneda=="reales")
     {
-        if (conversion=="peso")
+        if (conversion=="pesos")
         {
             totalConversion=(cantidad*36.33);
         }
@@ -109,7 +120,7 @@ function trabajo()
     }
     else if (tipoDeMoneda=="mexicanos")
     {
-        if (conversion=="peso")
+        if (conversion=="pesos")
         {
             totalConversion=(cantidad*9.89);
         }
@@ -132,7 +143,7 @@ function trabajo()
     }
     else
     {
-        if (conversion=="peso")
+        if (conversion=="pesos")
         {
             totalConversion=(cantidad*27.35);
         }
@@ -152,7 +163,26 @@ function trabajo()
         {
             totalConversion=(cantidad*0.75);
         }
-    }   
+    }
+    return totalConversion;   
 }
-trabajo();    
-alert(`El total es ${totalConversion} ${conversion}`);
+function menu()
+{
+    let respuesta=prompt("¿Le gustaria hacer alguna otra operacion?");
+    while (respuesta=="si"||"SI"||"s")
+    {
+        let moneda1=eligeMoneda1();
+        let moneda2=eligeMoneda2();
+        let totalDinero=cantidad();
+        let totalConversion=trabajo(moneda1,moneda2,totalDinero);    
+        alert(`El total es ${totalConversion} ${moneda2}`);
+        menu();
+    }
+    
+}
+let moneda1=eligeMoneda1();
+let moneda2=eligeMoneda2();
+let totalDinero=cantidad();
+let totalConversion=trabajo(moneda1,moneda2,totalDinero);    
+alert(`El total es ${totalConversion} ${moneda2}`);
+menu();
