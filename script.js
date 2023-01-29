@@ -178,7 +178,6 @@ function menu()
         alert(`El total es ${totalConversion} ${moneda2}`);
         menu();
     }
-    
 }
 let moneda1=eligeMoneda1();
 let moneda2=eligeMoneda2();
