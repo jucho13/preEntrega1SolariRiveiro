@@ -166,22 +166,8 @@ function trabajo(tipoDeMoneda,conversion,cantidad)
     }
     return totalConversion;   
 }
-function menu()
-{
-    let respuesta=prompt("¿Le gustaria hacer alguna otra operacion?");
-    while (respuesta=="si"||"SI"||"s")
-    {
-        let moneda1=eligeMoneda1();
-        let moneda2=eligeMoneda2();
-        let totalDinero=cantidad();
-        let totalConversion=trabajo(moneda1,moneda2,totalDinero);    
-        alert(`El total es ${totalConversion} ${moneda2}`);
-        menu();
-    }
-}
 let moneda1=eligeMoneda1();
 let moneda2=eligeMoneda2();
 let totalDinero=cantidad();
 let totalConversion=trabajo(moneda1,moneda2,totalDinero);    
 alert(`El total es ${totalConversion} ${moneda2}`);
-menu();
